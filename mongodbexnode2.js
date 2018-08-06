@@ -37,12 +37,26 @@
 //     db.close();
 //   });
 // });
+
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+//
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("Nodestudent");
+//   dbo.collection("Nodestudentmarks").find({}).toArray(function(err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//     db.close();
+//   });
+// });
+
 // var MongoClient = require('mongodb').MongoClient;
 // var url = "mongodb://127.0.0.1:27017/";
 //
 // MongoClient.connect(url, function(err, db) {
 //   if (err) throw err;
-//   var dbo = db.db("NodeStudent");
+//   var dbo = db.db("Nodestudent");
 //   var myquery = { maths_marks: '45' };
 //   var newvalues = { $set: {name: "Mala", maths_marks: "51" } };
 //   dbo.collection("Nodestudentmarks").updateOne(myquery, newvalues, function(err, res) {
@@ -57,7 +71,7 @@
 //
 // MongoClient.connect(url, function(err, db) {
 //   if (err) throw err;
-//   var dbo = db.db("NodeStudent");
+//   var dbo = db.db("Nodestudent");
 //   dbo.collection("Nodestudentmarks").find({Mathsmarks:{$gt:'50'}}).toArray(function(err, result) {
 //     if (err) throw err;
 //     console.log(result);
@@ -70,8 +84,8 @@
 //
 // MongoClient.connect(url, function(err, db) {
 //   if (err) throw err;
-//   var dbo = db.db("NodeStudent");
-//   dbo.collection("NodeStudentmathsmarks").find({maths_marks:{$lt:'50'}, english_marks: {$gt:'50'}}).toArray(function(err, result) {
+//   var dbo = db.db("Nodestudent");
+//   dbo.collection("Nodestudentmarks").find({maths_marks:{$lt:'50'}, english_marks: {$gt:'50'}}).toArray(function(err, result) {
 //     if (err) throw err;
 //     console.log(result);
 //     db.close();
@@ -83,8 +97,8 @@
 //
 // MongoClient.connect(url, function(err, db) {
 //   if (err) throw err;
-//   var dbo = db.db("NodeStudent");
-//   dbo.collection("NodeStudentmarks").find({maths_marks:{$lt:'40'}, science_marks:{$lt:'40'}}).toArray(function(err, result) {
+//   var dbo = db.db("Nodestudent");
+//   dbo.collection("Nodestudentmarks").find({maths_marks:{$lt:'40'}, science_marks:{$lt:'40'}}).toArray(function(err, result) {
 //     if (err) throw err;
 //     console.log(result);
 //     db.close();
@@ -95,8 +109,8 @@
 //
 // MongoClient.connect(url, function(err, db) {
 //   if (err) throw err;
-//   var dbo = db.db("NodeStudent");
-//   dbo.collection("NodeStudentmarks").update({name: "John"}, {$rename: {"english_marks":"science_marks"}}, function(err, result) {
+//   var dbo = db.db("Nodestudent");
+//   dbo.collection("Nodestudentmarks").update({name: "John"}, {$rename: {"english_marks":"science_marks"}}, function(err, result) {
 //     if (err) throw err;
 //     console.log(result);
 //     db.close();
@@ -107,8 +121,8 @@
 //
 // MongoClient.connect(url, function(err, db) {
 //   if (err) throw err;
-//   var dbo = db.db("NodeStudent");
-//   dbo.collection("NodeStudentmarks").remove({name: "Kumaran"}, function(err, result) {
+//   var dbo = db.db("Nodestudent");
+//   dbo.collection("Nodestudentmarks").remove({name: "Kumaran"}, function(err, result) {
 //     if (err) throw err;
 //     console.log(result);
 //     db.close();
@@ -119,8 +133,8 @@ var url = "mongodb://localhost:27017/";
 
 MongoClient.connect(url, function(err, db) {
  if (err) throw err;
- var dbo = db.db("NodeStudent");
- dbo.collection("NodeStudentmarks").find({science_marks:''}, {name:'Aruli'}).toArray(function(err, result) {
+ var dbo = db.db("Nodestudent");
+ dbo.collection("Nodestudentmarks").find({science_marks:''}, {name:'Aruli'}).toArray(function(err, result) {
    if (err) throw err;
    console.log(result);
    db.close();
